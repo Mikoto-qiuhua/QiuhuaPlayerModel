@@ -1,0 +1,108 @@
+#玩家进服时的默认模型
+DefaultModel: 'default'
+#当玩家离开服务器时是否移除玩家的模型
+QuitRecord: true
+#
+#相机设置
+Camera:
+  #是否启用
+  Enable: false
+  X: '{player_self_x}+sin(radians(({player_self_yaw}+180)*-1))*5'
+  Y: '{player_self_y}+2'
+  Z: '{player_self_z}+cos(radians(({player_self_yaw}+180)*-1))*5'
+#玩家头顶标签 使用模型会导致原版的名字消失
+PlayerNameTag:
+  #是否启用
+  Enable: false
+  #刷新间隔
+  Refresh: 5
+  Tag:
+    1:
+      Text: 'Top'
+      PositionX: "0"
+      PositionY: "0"
+      PositionZ: "0"
+      RotateX: "0"
+      RotateY: "0"
+      RotateZ: "0"
+      Size: "1"
+      Space: "0.2"
+    5:
+      Text: 'Name: %player_name%'
+      PositionX: "0"
+      PositionY: "0"
+      PositionZ: "0"
+      RotateX: "0"
+      RotateY: "0"
+      RotateZ: "0"
+      Size: "1"
+      Space: "0.2"
+    3:
+      Text: 'Down'
+      PositionX: "0"
+      PositionY: "0"
+      PositionZ: "0"
+      RotateX: "0"
+      RotateY: "0"
+      RotateZ: "0"
+      Size: "1"
+      Space: "0.2"
+
+#角色系统扩展 你没有这个插件就给他关掉
+GenshinRoleSystem:
+  #是否启用
+  Enable: false
+  #切换角色时 切换后的角色id包含在下列 就会自动套对应的模型id 没有就会清理玩家当前模型
+  RoleId:
+    空: player_ying
+    荧: player_ying
+    丽莎: player_lisha
+#默认动作对应的名称 在模型文件里面会默认使用的动作名字这里不能修改  修改了会导致动作切换不回默认的
+#模型配置那边按照这个对应的名称就能修改他的动画了
+DefaultAnimations:
+  IDLE: "idle"                              # 空闲状态
+  WALK: "walk"                              # 行走状态
+  RUN: "run"                                # 奔跑状态
+  JUMP: "jump"                              # 跳跃状态
+  SNEAKING: "sneaking"                      # 悄悄移动状态
+  SNEAK: "sneak"                            # 潜行状态
+  DEATH: "death"                            # 死亡状态
+  FLY: "elytra_fly"                         # 飞行状态
+  RIDE: "ride"                              # 骑行状态
+  RIDEPIG: "ride_pig"                       # 骑猪状态
+  SWIM: "swim"                              # 游泳状态
+  SWIMSTAND: "swim_stand"                   # 游泳站立状态
+  SLEEP: "sleep"                            # 睡眠状态
+  CLIMB: "climb"                            # 攀爬状态
+  LADDER: "climb"                           # 使用梯子状态
+  CLIMBING: "climbing"                      # 攀爬中状态
+  LADDERING: "climbing"                     # 使用梯子中状态
+  FLOAT: "fly"                              # 漂浮状态
+  RIPTIDE: "riptide"                        # 战斗状态
+  SHIELDRIGHT: "use_mainhand$minecraft:shield"       # 右手持盾状态
+  SHIELDLEFT: "use_offhand$minecraft:shield"         # 左手持盾状态
+  BOWRIGHT: "use_mainhand:bow"              # 右手持弓状态
+  BOWLEFT: "use_offhand:bow"                # 左手持弓状态
+  SPEARRIGHT: "use_mainhand:spear"          # 右手持矛状态
+  SPEARLEFT: "use_offhand:spear"            # 左手持矛状态
+  CROSSBOWRIGHT: "use_mainhand:crossbow"    # 右手持弩状态
+  CROSSBOWLEFT: "use_offhand:crossbow"      # 左手持弩状态
+  DRINKRIGHT: "use_mainhand:drink"          # 右手喝水状态
+  DRINKLEFT: "use_offhand:drink"            # 左手喝水状态
+  EATRIGHT: "use_mainhand:eat"              # 右手进食状态
+  EATLEFT: "use_offhand:eat"                # 左手进食状态
+  SPYGLASSRIGHT: "use_mainhand:spyglass"    # 右手使用望远镜状态
+  SPYGLASSLEFT: "use_offhand:spyglass"      # 左手使用望远镜状态
+  FISHING: "hold_mainhand:fishing"          # 钓鱼状态
+  USERIGHT: "use_mainhand"                  # 右手使用状态
+  USELEFT: "use_offhand"                    # 左手使用状态
+  CROSSBOWAIMRIGHT: "hold_mainhand:charged_crossbow"    # 右手瞄准弩状态
+  CROSSBOWAIMLEFT: "hold_offhand:charged_crossbow"      # 左手瞄准弩状态
+
+
+#通过实体uuid加载模型  比如ady的实体
+CustomEntityModels:
+#  模型名称:
+#    - uuid列表
+#    - uuid1
+#    - uuid2

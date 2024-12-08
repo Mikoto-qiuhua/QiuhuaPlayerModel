@@ -1,0 +1,16 @@
+name: QiuhuaPlayerModel
+main: org.qiuhua.qiuhuaplayermodel.Main
+version: 1.0.0
+api-version: 1.13
+depend:
+  - UnrealCore
+  - UnrealResource
+  - MythicMobs
+  - PlaceholderAPI
+softdepend:
+  - GenshinRoleSystem
+  - Adyeshach
+commands:
+  QiuhuaPlayerModel:
+    description: "主指令"
+    usage: /<command>

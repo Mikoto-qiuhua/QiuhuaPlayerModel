@@ -1,0 +1,111 @@
+#使用的模型
+#Model used
+Model: 'player_alex'
+
+#是否使用玩家Skin材質
+#Whether to use player Skin material
+OriginalMaterial: true
+
+#第一稱設置
+#First name setting
+First:
+
+  #是否要使用第一人稱模型。
+  #Whether to use the first person model.
+  Enable: true
+
+  #模型的顯示前後距離
+  #The display distance of the model before and after
+  Distance: 0.3
+
+  #模型的顯示高度
+  #Display height of the model
+  Height: -1.5
+
+  #模型不顯示的部件名稱
+  #Part names not shown in the model
+  RemovePart:
+    - UpBody,false
+    - UpperBody,false
+    - AllHead
+    - Jacket
+    - DownBody
+
+#第三稱設置
+#Third name setting
+Third:
+  #是否要使用第三人稱模型。
+  #Whether to use third person model.
+  Enable: true
+  #RemovePart:
+  #- DownBody
+  #- AllHead
+#要顯示的物品設置
+#Item settings to display
+Items:
+  MainHand:
+    #物品要顯示在模型上的位置
+    #The position where the item should be displayed on the model
+    ShowLocation: RightHandLocator
+    #除了NONE，其餘會顯示該部位的物品。
+    #Except NONE, other items in this part will be displayed.
+    #MAIN_HAND, OFF_HAND, HEAD, CHEST, LEGS, FEET, NONE
+    EquipmentSlot: MAIN_HAND
+    PosX: 0
+    PosY: 0
+    PosZ: 0
+    RotX: -90
+    RotY: 0
+    RotZ: 0
+  OffHane:
+    ShowLocation: LeftHandLocator
+    EquipmentSlot: OFF_HAND
+    PosX: 0
+    PosY: 0
+    PosZ: 0
+    RotX: -90
+    RotY: -180
+    RotZ: 0
+
+
+
+
+#动作控制器
+AnimationsController:
+  #手持指定物品时
+  HandheldItems:
+    #动作类型1 名称不固定 可以按这种格式添加多套
+    Type1:
+      #判断物品
+      Item:
+        #物品类型 留空则不判断 不要颜色代码
+        type: ""
+        #名字
+        name: ""
+        #lore
+        lore: ""
+      #满足上面的条件 动作就会切换成这些名称
+      AnimationsSwitch:
+        IDLE: "idle1"                 # 空闲状态
+        WALK: "walk1"                 # 行走状态
+        RUN: "run1"                   # 奔跑状态
+        JUMP: "jump1"                 # 跳跃状态
+        SNEAKING: "sneaking1"         # 潜行状态
+        SNEAK: "sneak1"               # 潜行移动状态
+    Type2:
+      #判断物品
+      Item:
+        #物品类型 留空则不判断 不要颜色代码
+        type: ""
+        #名字
+        name: ""
+        #lore
+        lore: ""
+      #满足上面的条件 动作就会切换成这些名称
+      AnimationsSwitch:
+        IDLE: "idle2"                 # 空闲状态
+        WALK: "walk2"                 # 行走状态
+        RUN: "run2"                   # 奔跑状态
+        JUMP: "jump2"                 # 跳跃状态
+        SNEAKING: "sneaking2"         # 潜行状态
+        SNEAK: "sneak2"               # 潜行移动状态
